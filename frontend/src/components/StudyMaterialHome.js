@@ -11,13 +11,13 @@ export default function StudyMaterialHome() {
   const [filters, setFilters] = useState({
     semester: "",
     branch: "",
-    code: ""
+    title: ""
   });
 
   // Extract unique values for filters
   const uniqueSemesters = [...new Set(notes.map(note => note.semester))].sort();
   const uniqueBranches = [...new Set(notes.map(note => note.branch))].sort();
-  const uniqueCodes = [...new Set(notes.map(note => note.code))].sort();
+  const uniqueCodes = [...new Set(notes.map(note => note.title))].sort();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,7 +48,7 @@ export default function StudyMaterialHome() {
     setFilters({
       semester: "",
       branch: "",
-      code: ""
+      title: ""
     });
   };
 
@@ -56,7 +56,7 @@ export default function StudyMaterialHome() {
     return (
       (filters.semester === "" || note.semester === filters.semester) &&
       (filters.branch === "" || note.branch === filters.branch) &&
-      (filters.code === "" || note.code === filters.code)
+      (filters.title === "" || note.title === filters.title)
     );
   });
 
@@ -110,14 +110,14 @@ export default function StudyMaterialHome() {
               </select>
 
               <select
-                name="code"
-                value={filters.code}
+                name="title"
+                value={filters.title}
                 onChange={handleFilterChange}
                 className="flex-1 min-w-[200px] border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="">All Subjects</option>
-                {uniqueCodes.map((code, idx) => (
-                  <option key={idx} value={code}>{code}</option>
+                {uniqueCodes.map((title, idx) => (
+                  <option key={idx} value={title}>{title}</option>
                 ))}
               </select>
 

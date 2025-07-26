@@ -11,7 +11,7 @@ const Body = () => {
         <span className="text-blue-800"> Empowers!</span>
       </h1>
       <p className="text-blue-400 text-lg mb-10 max-w-xl uppercase">
-        The easiest way to upload, find, and share notes across myNotebook!
+        The easiest way to upload, find, and share notes across our NoteStack!
         Unlock Knowledge, Empower Your Peers!
       </p>
 
